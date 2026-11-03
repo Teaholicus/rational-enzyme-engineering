@@ -1,0 +1,42 @@
+# Shared pipeline parameters, common to every target.
+#
+# The ACTIVE TARGET is NOT set here -- it lives in config/active.yaml. Keeping
+# them apart means updating these shared settings cannot overwrite your target
+# selection, and vice versa.
+#
+# Per-protein files (config/<TARGET>.yaml) override anything set here.
+
+homolog_search:
+  mmseqs_db_path: "data/mmseqs_dbs/uniref90_db/uniref90"
+  max_seqs: 2000
+  min_pident: 0.40
+  min_qcov: 0.7
+  cluster_min_seq_id: 0.90
+
+foldx:
+  foldx_dir: "tools/foldx5"
+  foldx_exe: "foldx5.exe"
+  target_positions: "all"
+
+structural_annotation:
+  contact_radius_angstrom: 10.0
+  # Only used for predicted (AlphaFold) structures: minimum pLDDT for a
+  # residue to be treated as reliably modelled. 70 is AlphaFold's own
+  # "confident" boundary.
+  plddt_min: 70.0
+  sasa_buried_max_rsa: 0.05
+  sasa_exposed_min_rsa: 0.25
+
+candidate_selection:
+  catalytic_radius_angstrom: 10.0
+  binding_site_radius_angstrom: 6.0
+  ddg_ceiling_kcalmol: 3.5
+  wt_dominant_frequency_threshold: 0.70
+  min_msa_depth: 30
+  novelty_frequency_threshold: 0.02
+  strain_relief_ddg_threshold: -0.5
+
+paths:
+  results_dir: "results"
+  structures_dir: "data/structures"
+  sequences_dir: "data/sequences"

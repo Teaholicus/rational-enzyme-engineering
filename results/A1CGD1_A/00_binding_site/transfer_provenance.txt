@@ -1,0 +1,7 @@
+target=A1CGD1_A
+reference=1WD4
+ligand=AHR copy chain A resnum 601
+sequence_identity=0.761
+global_rmsd=3.884 (on 367 CA pairs)
+transform_used=local
+applied_rmsd=0.192 (on 50 CA pairs, within 12.0 A of the ligand)

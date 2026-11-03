@@ -1,0 +1,83 @@
+# Aspergillus clavatus alpha-L-arabinofuranosidase B (AbfB)
+# GH54 catalytic domain + CBM42 arabinose-binding module.
+#
+# Selected from this author's fungal CAZyme genome-mining project
+# (github.com/Teaholicus/fungal-multidomain-cazyme-mining) as a candidate with
+# no published engineering work: exo-acting (pocket active site), two-domain,
+# mesophilic, with catalytic residues annotated by similarity in UniProt.
+#
+# NO EXPERIMENTAL STRUCTURE EXISTS -- an AlphaFold model is used.
+# Consequences, both handled downstream but worth remembering:
+#   1. The B-factor column holds pLDDT, where HIGH = confident. This is the
+#      opposite direction to crystallographic B-factor, where high = mobile.
+#      struct_bfactor_* columns must be interpreted accordingly for this target.
+#   2. The model spans the full UniProt sequence including the signal peptide
+#      and disordered termini, which are very low confidence. Filter on pLDDT
+#      before trusting per-residue values at the termini.
+#
+# CATALYTIC RESIDUES: E229 (nucleophile) and D305 (proton donor), from UniProt
+# Active Site annotations (ECO:0000250, by similarity to Q8NK89). Both were
+# independently recovered in the geometric contact list below, at 2.41 A and
+# 2.71 A from the transferred ligand. Consistent with AkAbfB E221/D297 under a
+# uniform +8 offset.
+#
+# BINDING SITE: no co-crystal exists for this protein, so the ligand is
+# transferred from a homologous one by superimposition:
+#     python workflow/util_transfer_ligand.py --reference 1WD4 --list-ligands
+#     python workflow/util_transfer_ligand.py --reference 1WD4 --ligand <CODE>
+#     python workflow/util_find_binding_site.py --structure <written file>
+# 1WD4 holds three arabinose copies -- AHR A601 in the catalytic pocket, two on
+# the CBM42 module -- so the copy was selected explicitly (--ligand-resnum 601).
+# Transfer quality: 76.1% sequence identity, global RMSD 3.88 A (both domains,
+# inflated by an inter-domain hinge difference), local RMSD 0.19 A on 50 CA
+# pairs within 12 A of the ligand. The local fit is the one applied.
+#
+# Cross-check: UniProt independently annotates substrate-binding residues at
+# 227, 230, 304 (catalytic pocket) and 424, 426, 427, 443, 471, 476, 496
+# (CBM42). All three catalytic-pocket positions appear in the geometric list
+# below; none of the CBM42 positions do, confirming the right ligand copy was
+# chosen. The CBM42 sites are a targeting module -- they raise local substrate
+# concentration on polymeric substrate rather than contributing to turnover --
+# so they are deliberately excluded. Engineering them would be a separate
+# hypothesis requiring polymer-substrate assays.
+#
+# Alternative references considered: 6SXR (covalent Michaelis-like complex,
+# mechanistically closer to the substrate state than 1WD4's product complex)
+# and 2D43 (arabinotriose, but a mutant structure from a CBM42-focused study,
+# so the ligand may sit on the targeting module rather than the active site).
+#
+# C184/C185 ARE A VICINAL DISULFIDE. Adjacent cysteines bonded to each other,
+# forcing the cis-peptide bond UniProt annotates at 184-185; in AkAbfB this
+# disulfide directly contacts the arabinofuranose in the active site. FoldX
+# models neither the cis-peptide constraint nor that substrate contact, so its
+# ddG values at these two positions are not meaningful. They are kept in the
+# binding-site list for distance purposes but should not be treated as
+# mutable candidates.
+
+protein:
+  pdb_id: "A1CGD1"          # no PDB entry; used as the output namespace
+  chain: "A"
+  uniprot_id: "A1CGD1"
+  structure_source: "alphafold"
+
+analysis:
+  organism: "Aspergillus clavatus"
+
+functional_residues:
+  catalytic:
+    - E229                  # nucleophile
+    - D305                  # proton donor
+  binding_site:             # 4.5 A contacts with the transferred AHR, catalytic residues removed
+    - C184                  # vicinal disulfide with C185; contacts substrate -- do not mutate
+    - C185                  # vicinal disulfide with C184; contacts substrate -- do not mutate
+    - D187
+    - D197
+    - M203
+    - W214
+    - D227                  # UniProt substrate-binding site
+    - N230                  # UniProt substrate-binding site
+    - G231
+    - L232
+    - G303
+    - G304                  # UniProt substrate-binding site
+    - S307

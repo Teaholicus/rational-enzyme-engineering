@@ -1,0 +1,17 @@
+,value
+sequence_length,506.0
+residues_modeled_in_structure,506.0
+uniprot_structure_conflicts,0.0
+pct_helix,10.474308300395258
+pct_sheet,36.75889328063241
+pct_loop,52.76679841897233
+pct_buried,35.177865612648226
+pct_exposed,45.45454545454545
+set_a_geometric_positions,38.0
+set_b_geometric_positions,17.0
+set_a_tier1_positions,6.0
+set_b_tier1_positions,6.0
+set_a_library_variants,265.0
+set_b_library_variants,119.0
+total_library_variants,384.0
+novel_substitutions_in_library,352.0

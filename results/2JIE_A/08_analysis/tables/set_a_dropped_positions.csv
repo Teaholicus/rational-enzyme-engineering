@@ -1,0 +1,2 @@
+residue_number,wt_residue,reason,min_ddg_available,struct_burial_class,struct_ss_class
+15,G,no substitution below ddG ceiling (3.5),6.19,buried,sheet

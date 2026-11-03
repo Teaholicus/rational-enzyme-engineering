@@ -1,0 +1,3 @@
+uniprot_id=P22505
+pdb_id=2JIE
+chain=A

@@ -1,0 +1,42 @@
+protein:
+  pdb_id: "1CTN"
+  chain: "A"
+homolog_search:
+  mmseqs_db_path: "data/mmseqs_dbs/uniref90_db/uniref90"
+  max_seqs: 2000
+  min_pident: 0.40
+  min_qcov: 0.7
+  cluster_min_seq_id: 0.90
+foldx:
+  foldx_dir: "tools/foldx5"
+  foldx_exe: "foldx5.exe"
+  target_positions: "all"
+paths:
+  results_dir: "results"
+  structures_dir: "data/structures"
+functional_residues:
+  catalytic:
+    - D313
+    - E315
+  binding_site:
+    - W33
+    - W69
+    - W167
+    - Y170
+    - F232
+    - W245
+    - W275
+    - F396
+    - W539
+structural_annotation:
+  contact_radius_angstrom: 10.0
+  sasa_buried_max_rsa: 0.05
+  sasa_exposed_min_rsa: 0.25
+candidate_selection:
+  catalytic_radius_angstrom: 10.0
+  binding_site_radius_angstrom: 6.0
+  ddg_ceiling_kcalmol: 3.5
+  wt_dominant_frequency_threshold: 0.70
+  min_msa_depth: 30
+  novelty_frequency_threshold: 0.02
+  strain_relief_ddg_threshold: -0.5

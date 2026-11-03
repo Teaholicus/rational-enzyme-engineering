@@ -1,0 +1,17 @@
+set,residue_number,wt_residue,mutant,foldx_ddg,passes_ddg_guardrail,natural_frequency,is_novel_substitution,cons_conservation_percentile,struct_dist_nearest_catalytic,struct_dist_nearest_binding_site,struct_burial_class,struct_ss_class
+A_catalytic_adjacent,320,K,G,-2.21365,True,0.4006211180124223,False,16.87388987566607,7.897607,10.359754,exposed,loop
+A_catalytic_adjacent,320,K,N,0.0614478,True,0.0496894409937888,False,16.87388987566607,7.897607,10.359754,exposed,loop
+A_catalytic_adjacent,320,K,W,0.106995,True,0.0,True,16.87388987566607,7.897607,10.359754,exposed,loop
+A_catalytic_adjacent,320,K,Y,0.183434,True,0.0062111801242236,True,16.87388987566607,7.897607,10.359754,exposed,loop
+A_catalytic_adjacent,320,K,F,0.209162,True,0.0031055900621118,True,16.87388987566607,7.897607,10.359754,exposed,loop
+A_catalytic_adjacent,320,K,Q,0.292227,True,0.0869565217391304,False,16.87388987566607,7.897607,10.359754,exposed,loop
+A_catalytic_adjacent,320,K,H,0.307604,True,0.0031055900621118,True,16.87388987566607,7.897607,10.359754,exposed,loop
+A_catalytic_adjacent,320,K,A,0.313945,True,0.0124223602484472,True,16.87388987566607,7.897607,10.359754,exposed,loop
+A_catalytic_adjacent,320,K,D,0.360811,True,0.1055900621118012,False,16.87388987566607,7.897607,10.359754,exposed,loop
+A_catalytic_adjacent,320,K,L,0.40951,True,0.0093167701863354,True,16.87388987566607,7.897607,10.359754,exposed,loop
+A_catalytic_adjacent,320,K,E,0.651347,True,0.0124223602484472,True,16.87388987566607,7.897607,10.359754,exposed,loop
+A_catalytic_adjacent,320,K,T,1.27991,True,0.0031055900621118,True,16.87388987566607,7.897607,10.359754,exposed,loop
+A_catalytic_adjacent,320,K,R,1.47831,True,0.0124223602484472,True,16.87388987566607,7.897607,10.359754,exposed,loop
+A_catalytic_adjacent,320,K,M,1.89341,True,0.0,True,16.87388987566607,7.897607,10.359754,exposed,loop
+A_catalytic_adjacent,320,K,C,1.9273,True,0.0,True,16.87388987566607,7.897607,10.359754,exposed,loop
+A_catalytic_adjacent,320,K,S,1.98249,True,0.0248447204968944,False,16.87388987566607,7.897607,10.359754,exposed,loop

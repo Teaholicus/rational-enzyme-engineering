@@ -1,0 +1,40 @@
+# Paenibacillus polymyxa beta-glucosidase B (BglB), GH1 family
+# Validation target: Carlin et al. 2016 measured kcat/KM for 100 mutants.
+#
+# NUMBERING: this project uses UniProt (P22505) numbering throughout, which the
+# 2JIE mmCIF already matches -- the crystal construct carries an N-terminal
+# His-tag, so the RCSB FASTA is shifted, but the deposited coordinates are not.
+# Sequence otherwise matches UniProt with no conflicts.
+#
+# The Design2Data / Rosetta-Foldit literature uses a numbering offset by 3
+# (e.g. "G23S" Foldit == "G26S" conventional), so kinetic data from those
+# papers must be shifted before comparison. Do that at comparison time, not
+# by renumbering the structure.
+#
+# Catalytic pair below is UniProt numbering. VERIFY against the structure
+# before running -- both should come back GLU:
+#     from Bio.PDB import MMCIFParser
+#     ch = MMCIFParser(QUIET=True).get_structure("x","data/structures/2JIE.cif")[0]["A"]
+#     [(n, [r.get_resname() for r in ch if r.id[1]==n]) for n in (167, 356)]
+#
+# 2JIE is a co-crystal with 2-fluoro-glucose, so binding_site should be derived
+# geometrically rather than curated:
+#     python workflow/util_find_binding_site.py --config config/2JIE_A.yaml --list-ligands
+#     python workflow/util_find_binding_site.py --config config/2JIE_A.yaml --ligand <NAME>
+# then paste the output below and remove the catalytic residues from it.
+
+protein:
+  pdb_id: "2O9R"
+  chain: "A"
+  # Optional. Auto-derived from the mmCIF cross-reference if omitted; when set,
+  # 01_acquire_protein.py cross-checks the two and warns on disagreement.
+  uniprot_id: "P22505"
+
+analysis:
+  organism: "Paenibacillus polymyxa"
+
+functional_residues:
+  catalytic:
+    - E167
+    - E356
+  binding_site: []   # populate from util_find_binding_site.py

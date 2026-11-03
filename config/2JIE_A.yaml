@@ -1,0 +1,74 @@
+# Paenibacillus polymyxa beta-glucosidase B (BglB), GH1 family
+# Validation target: Carlin et al. 2016 measured kcat/KM for 100 mutants.
+#
+# NUMBERING: this project uses UniProt (P22505) numbering throughout, which the
+# 2JIE mmCIF already matches -- the crystal construct carries an N-terminal
+# His-tag, so the RCSB FASTA is shifted, but the deposited coordinates are not.
+# Sequence otherwise matches UniProt with no conflicts.
+#
+# The Design2Data / Rosetta-Foldit literature uses a numbering offset by 3
+# (e.g. "G23S" Foldit == "G26S" conventional), so kinetic data from those
+# papers must be shifted before comparison. Do that at comparison time, not
+# by renumbering the structure.
+#
+# Catalytic pair below is UniProt numbering, verified as GLU in the structure.
+# 01_acquire_protein.py reports 445/445 modeled residues (4-448) agreeing with
+# UniProt numbering for this target -- no offset, no sequence conflicts.
+#
+# BINDING SITE PROVENANCE
+# Derived geometrically (5.0 A ligand contacts, util_find_binding_site.py) from
+# 2O9R, the BglB-thiocellobiose complex, NOT from 2JIE itself. 2JIE's ligand
+# (G2F, 2-fluoro-glucose) occupies only the -1 subsite, so it misses the entire
+# +1 aglycone-binding region. 2O9R's thiocellobiose spans -1 (BGC) and +1 (SGC),
+# matching the geometry of pNPG -- the substrate the Carlin et al. kinetic
+# benchmark actually measures (glucose in -1, nitrophenyl aglycone in +1).
+#
+# 2O9R carries Q375/R376 substitutions relative to wild type; neither is in or
+# near the contact list, so the derived site is unaffected.
+#
+# Catalytic E167 and E356 contact the ligand and appear in the raw contact list;
+# they are removed here and kept in `catalytic` (excluded from all candidate sets).
+#
+# Subsite assignment comes from which sugar each residue contacts: E356 (the
+# nucleophile, which attacks the anomeric carbon) contacts BGC only, identifying
+# BGC as -1 and SGC as +1.
+#
+# NOTE: R243 and E225 correspond to R240/E222 in Rosetta-Foldit numbering (-3
+# offset), the pair behind the ~10x kcat R240A mutant reported by Carlin et al.
+# Both were recovered here from structure alone, with no literature input.
+
+protein:
+  pdb_id: "2JIE"
+  chain: "A"
+  # Optional. Auto-derived from the mmCIF cross-reference if omitted; when set,
+  # 01_acquire_protein.py cross-checks the two and warns on disagreement.
+  uniprot_id: "P22505"
+
+analysis:
+  organism: "Paenibacillus polymyxa"
+
+functional_residues:
+  catalytic:
+    - E167          # acid/base
+    - E356          # nucleophile
+    - Y298          # supportive
+  binding_site:     # subsite in comments: -1 = glycone, +1 = aglycone
+    - Q22           # -1
+    - H122          # -1
+    - W123          # +1/-1
+    - C170          # +1
+    - L174          # +1
+    - H181          # +1
+    - N223          # +1/-1
+    - E225          # +1   (E222 Foldit)
+    - R243          # +1   (R240 Foldit -- R240A gave ~10x kcat)
+    - N296          # -1
+    - Y298          # +1/-1
+    - T299          # +1
+    - M326          # -1
+    - W328          # +1/-1
+    - W402          # -1
+    - E409          # -1
+    - W410          # -1
+    - W412          # -1
+    - F418          # -1

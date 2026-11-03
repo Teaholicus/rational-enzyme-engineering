@@ -1,0 +1,8 @@
+# Which target the pipeline runs against. Edit this one line to switch.
+# Names a file in this directory: config/<name>.yaml
+#
+# Kept separate from base.yaml on purpose -- base.yaml holds shared pipeline
+# parameters, this holds local working state. Updating one never clobbers
+# the other.
+
+active_protein: "A1CGD1"

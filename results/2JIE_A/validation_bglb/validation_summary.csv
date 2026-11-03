@@ -1,0 +1,8 @@
+,value
+mutants_with_kinetics,73.0
+positions_covered,64.0
+mutants_improving_kcat,6.0
+best_pipeline_feature_rho,0.559
+best_paper_rosetta_feature_rho,0.421
+conservation_cross_check_rho,0.668
+foldx_ddg_vs_kcat_rho,-0.242

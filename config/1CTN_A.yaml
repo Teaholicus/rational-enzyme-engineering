@@ -1,0 +1,29 @@
+# Serratia marcescens chitinase A (SmChiA)
+# Validation target: Visootsat et al. 2020 identified S538V as an improved mutant.
+# Binding-site residues are literature-curated (1CTN is apo, no ligand to
+# derive them from geometrically).
+
+protein:
+  pdb_id: "1CTN"
+  chain: "A"
+  # Optional. Auto-derived from the mmCIF cross-reference if omitted; when set,
+  # 01_acquire_protein.py cross-checks the two and warns on disagreement.
+  uniprot_id: "P07254"
+
+analysis:
+  organism: "Serratia marcescens"
+
+functional_residues:
+  catalytic:
+    - D313
+    - E315
+  binding_site:
+    - W33
+    - W69
+    - W167
+    - Y170
+    - F232
+    - W245
+    - W275
+    - F396
+    - W539
