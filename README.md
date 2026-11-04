@@ -5,6 +5,11 @@ A reproducible workflow that takes an enzyme structure and returns a ranked, scr
 **Input:** a structure, a chain, and the catalytic residues.
 **Output:** candidate positions grouped by mechanistic hypothesis, ranked by evolutionary evidence, with structural and biophysical context for each position.
 
+**Key results**
+- Ranking correlates with measured k<sub>cat</sub> (Spearman ρ = 0.56, n = 73 mutants), above the best of the 54 Rosetta structural features computed for the same system by Carlin et al. 2016 (|SRC| = 0.42).
+- All 6 activity-improving mutants in that dataset fall in tier 1, the pipeline's priority tier (p = 0.023).
+- Applied to an uncharacterised GH54 α-L-arabinofuranosidase from my [CAZyme mining project](https://github.com/Teaholicus/fungal-multidomain-cazyme-mining): 12 tier 1 positions, 84 candidate variants.
+
 Switching to a new enzyme is done by editing one line of configuration.
 
 ---
