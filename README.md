@@ -3,6 +3,7 @@
 A reproducible workflow that takes an enzyme structure and returns a ranked, screenable set of mutation targets for improving catalytic activity.
 
 **Input:** a structure, a chain, and the catalytic residues.
+
 **Output:** candidate positions grouped by mechanistic hypothesis, ranked by evolutionary evidence, with structural and biophysical context for each position.
 
 **Key results**
@@ -106,11 +107,11 @@ That selection is independently corroborated: UniProt separately annotates subst
 
 ![Per-residue feature tracks and selection](results/A1CGD1_A/08_analysis/figures/multitrack_position_plot.png)
 
-*All 506 residues. The pLDDT cliff at around residue 25 marks the signal peptide; candidates are confined to 110 to 310, with nothing in the CBM42 module past 350. Tier 1 positions appear as isolated points flanking dense tier 2 blocks.*
+*All 506 residues. The pLDDT cliff at around residue 25 marks the signal peptide; candidates are confined to the 110 - 310 range, with nothing in the CBM42 module past 350. Tier 1 positions appear as isolated points flanking dense tier 2 blocks.*
 
 ![Candidate sets on the structure](results/A1CGD1_A/08_analysis/figures/A1CGD1_A_Candidates.png)
 
-*The same selection on the AlphaFold model, with the transferred arabinose in yellow. Catalytic residues are red, Set A orange, Set B purple, and the rest of the chain grey. Side chains are drawn for tier 1 positions only, which is why the tier 1 stretches read as the cluster of sticks around the pocket mouth. The CBM42 module, upper left, carries no candidates.*
+*The same selection on the AlphaFold model, with the transferred arabinose in yellow. Catalytic residues are red, Set A orange, Set B purple, and the rest of the chain grey. Side chains are drawn for tier 1 positions only. The CBM42 module, upper left, carries no candidates.*
 
 The highest-ranked candidate is **L196** (Set A rank 1): entropy 2.78, exposed loop, 4.07 Å from the catalytic residues, and arginine is *more* common at that column among homologs (31%) than the wild-type leucine (22%). FoldX predicts L196R to be mildly stabilising, at −0.94 kcal/mol.
 

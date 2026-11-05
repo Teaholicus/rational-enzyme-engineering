@@ -2,6 +2,8 @@
 mutants_with_kinetics,73.0
 positions_covered,64.0
 mutants_improving_kcat,6.0
+improvers_in_tier1,6.0
+tier1_improvement_enrichment_p,0.0225
 best_pipeline_feature_rho,0.559
 best_paper_rosetta_feature_rho,0.421
 conservation_cross_check_rho,0.668

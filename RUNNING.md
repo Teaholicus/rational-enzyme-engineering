@@ -4,7 +4,7 @@
 
 Everything runs in WSL/Ubuntu **except the notebooks**, which run under Windows Jupyter reading the same files (`N:\...` from Windows is `/mnt/n/...` from WSL — one drive, two paths).
 
-| Step | Needs | Why |
+| Step | Needs | Reason |
 |---|---|---|
 | `01` | either | pure Python |
 | `02` | **WSL** | `mmseqs` |
